@@ -8,13 +8,13 @@ using System.Text;
 namespace Algorithm.Tests
 {
     [TestClass()]
-    public class BubbleSortTests
+    public class CocktailSortTests
     {
         [TestMethod()]
         public void SortTest()
         {
             // Arrange
-            var bubble = new BubbleSort<int>();
+            var cocktail = new CocktailSort<int>();
             var items = new List<int>();
 
             var rnd = new Random();
@@ -24,16 +24,16 @@ namespace Algorithm.Tests
                 items.Add(rnd.Next(0, 100));
             }
 
-            bubble.Items.AddRange(items);
+            cocktail.Items.AddRange(items);
             var sorted = items.OrderBy(x => x).ToArray();
 
             // Act
-            bubble.Sort();
+            cocktail.Sort();
 
             // Assert
             for (var i = 0; i < items.Count; i++)
             {
-                Assert.AreEqual(sorted[i], bubble.Items[i]);
+                Assert.AreEqual(sorted[i], cocktail.Items[i]);
             }
         }
     }
