@@ -5,10 +5,15 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Sorting_Algorithms</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Algorithm\Algorithm.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
 
 </Project>

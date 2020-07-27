@@ -19,7 +19,7 @@ namespace Algorithm.Tests
 
             var rnd = new Random();
 
-            for (var i = 0; i < 1000; i++)
+            for (var i = 0; i < 10000; i++)
             {
                 items.Add(rnd.Next(0, 100));
             }

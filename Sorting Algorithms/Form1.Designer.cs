@@ -28,80 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.AddNumbersPanel = new System.Windows.Forms.Panel();
+            this.AddLabel = new System.Windows.Forms.Label();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.AddTextBox = new System.Windows.Forms.TextBox();
+            this.FillRandomPanel = new System.Windows.Forms.Panel();
+            this.FillRandomLabel = new System.Windows.Forms.Label();
+            this.FillRandomButton = new System.Windows.Forms.Button();
+            this.AmountRandomTextBox = new System.Windows.Forms.TextBox();
+            this.VisualizationPanel = new System.Windows.Forms.Panel();
+            this.AddNumbersPanel.SuspendLayout();
+            this.FillRandomPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // AddNumbersPanel
             // 
-            this.button1.Location = new System.Drawing.Point(132, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.AddNumbersPanel.Controls.Add(this.AddLabel);
+            this.AddNumbersPanel.Controls.Add(this.AddButton);
+            this.AddNumbersPanel.Controls.Add(this.AddTextBox);
+            this.AddNumbersPanel.Location = new System.Drawing.Point(0, 0);
+            this.AddNumbersPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.AddNumbersPanel.Name = "AddNumbersPanel";
+            this.AddNumbersPanel.Size = new System.Drawing.Size(388, 70);
+            this.AddNumbersPanel.TabIndex = 0;
             // 
-            // textBox1
+            // AddLabel
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 1;
+            this.AddLabel.AutoSize = true;
+            this.AddLabel.Location = new System.Drawing.Point(18, 11);
+            this.AddLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.AddLabel.Name = "AddLabel";
+            this.AddLabel.Size = new System.Drawing.Size(74, 15);
+            this.AddLabel.TabIndex = 2;
+            this.AddLabel.Text = "Add number";
             // 
-            // button2
+            // AddButton
             // 
-            this.button2.Location = new System.Drawing.Point(12, 62);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(195, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Sort";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.AddButton.Location = new System.Drawing.Point(287, 28);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(88, 27);
+            this.AddButton.TabIndex = 1;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // label1
+            // AddTextBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 15);
-            this.label1.TabIndex = 3;
+            this.AddTextBox.Location = new System.Drawing.Point(18, 29);
+            this.AddTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.AddTextBox.Name = "AddTextBox";
+            this.AddTextBox.Size = new System.Drawing.Size(265, 23);
+            this.AddTextBox.TabIndex = 0;
             // 
-            // label2
+            // FillRandomPanel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 15);
-            this.label2.TabIndex = 4;
+            this.FillRandomPanel.Controls.Add(this.FillRandomLabel);
+            this.FillRandomPanel.Controls.Add(this.FillRandomButton);
+            this.FillRandomPanel.Controls.Add(this.AmountRandomTextBox);
+            this.FillRandomPanel.Location = new System.Drawing.Point(0, 77);
+            this.FillRandomPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.FillRandomPanel.Name = "FillRandomPanel";
+            this.FillRandomPanel.Size = new System.Drawing.Size(388, 70);
+            this.FillRandomPanel.TabIndex = 3;
+            // 
+            // FillRandomLabel
+            // 
+            this.FillRandomLabel.AutoSize = true;
+            this.FillRandomLabel.Location = new System.Drawing.Point(18, 11);
+            this.FillRandomLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.FillRandomLabel.Name = "FillRandomLabel";
+            this.FillRandomLabel.Size = new System.Drawing.Size(165, 15);
+            this.FillRandomLabel.TabIndex = 2;
+            this.FillRandomLabel.Text = "Fill random numbers, amount";
+            // 
+            // FillRandomButton
+            // 
+            this.FillRandomButton.Location = new System.Drawing.Point(287, 28);
+            this.FillRandomButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.FillRandomButton.Name = "FillRandomButton";
+            this.FillRandomButton.Size = new System.Drawing.Size(88, 27);
+            this.FillRandomButton.TabIndex = 1;
+            this.FillRandomButton.Text = "Fill";
+            this.FillRandomButton.UseVisualStyleBackColor = true;
+            this.FillRandomButton.Click += new System.EventHandler(this.FillRandomButton_Click);
+            // 
+            // AmountRandomTextBox
+            // 
+            this.AmountRandomTextBox.Location = new System.Drawing.Point(18, 29);
+            this.AmountRandomTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.AmountRandomTextBox.Name = "AmountRandomTextBox";
+            this.AmountRandomTextBox.Size = new System.Drawing.Size(265, 23);
+            this.AmountRandomTextBox.TabIndex = 0;
+            // 
+            // VisualizationPanel
+            // 
+            this.VisualizationPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.VisualizationPanel.Location = new System.Drawing.Point(0, 153);
+            this.VisualizationPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.VisualizationPanel.Name = "VisualizationPanel";
+            this.VisualizationPanel.Size = new System.Drawing.Size(933, 148);
+            this.VisualizationPanel.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(933, 519);
+            this.Controls.Add(this.VisualizationPanel);
+            this.Controls.Add(this.FillRandomPanel);
+            this.Controls.Add(this.AddNumbersPanel);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.AddNumbersPanel.ResumeLayout(false);
+            this.AddNumbersPanel.PerformLayout();
+            this.FillRandomPanel.ResumeLayout(false);
+            this.FillRandomPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.TextBox AddTextBox;
+        private System.Windows.Forms.Label AddLabel;
+        private System.Windows.Forms.Panel AddNumbersPanel;
+        private System.Windows.Forms.Label FillRandomLabel;
+        private System.Windows.Forms.Button FillRandomButton;
+        private System.Windows.Forms.TextBox AmountRandomTextBox;
+        private System.Windows.Forms.Panel FillRandomPanel;
+        private System.Windows.Forms.Panel VisualizationPanel;
     }
 }
 
