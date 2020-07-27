@@ -37,8 +37,12 @@
             this.FillRandomButton = new System.Windows.Forms.Button();
             this.AmountRandomTextBox = new System.Windows.Forms.TextBox();
             this.VisualizationPanel = new System.Windows.Forms.Panel();
+            this.ControlsPanel = new System.Windows.Forms.Panel();
+            this.BubbleSortButton = new System.Windows.Forms.Button();
+            this.ClearButton = new System.Windows.Forms.Button();
             this.AddNumbersPanel.SuspendLayout();
             this.FillRandomPanel.SuspendLayout();
+            this.ControlsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddNumbersPanel
@@ -49,7 +53,7 @@
             this.AddNumbersPanel.Location = new System.Drawing.Point(0, 0);
             this.AddNumbersPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AddNumbersPanel.Name = "AddNumbersPanel";
-            this.AddNumbersPanel.Size = new System.Drawing.Size(388, 70);
+            this.AddNumbersPanel.Size = new System.Drawing.Size(295, 70);
             this.AddNumbersPanel.TabIndex = 0;
             // 
             // AddLabel
@@ -64,10 +68,10 @@
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(287, 28);
+            this.AddButton.Location = new System.Drawing.Point(191, 29);
             this.AddButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(88, 27);
+            this.AddButton.Size = new System.Drawing.Size(88, 23);
             this.AddButton.TabIndex = 1;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
@@ -78,7 +82,7 @@
             this.AddTextBox.Location = new System.Drawing.Point(18, 29);
             this.AddTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AddTextBox.Name = "AddTextBox";
-            this.AddTextBox.Size = new System.Drawing.Size(265, 23);
+            this.AddTextBox.Size = new System.Drawing.Size(165, 23);
             this.AddTextBox.TabIndex = 0;
             // 
             // FillRandomPanel
@@ -89,7 +93,7 @@
             this.FillRandomPanel.Location = new System.Drawing.Point(0, 77);
             this.FillRandomPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.FillRandomPanel.Name = "FillRandomPanel";
-            this.FillRandomPanel.Size = new System.Drawing.Size(388, 70);
+            this.FillRandomPanel.Size = new System.Drawing.Size(295, 70);
             this.FillRandomPanel.TabIndex = 3;
             // 
             // FillRandomLabel
@@ -104,10 +108,10 @@
             // 
             // FillRandomButton
             // 
-            this.FillRandomButton.Location = new System.Drawing.Point(287, 28);
+            this.FillRandomButton.Location = new System.Drawing.Point(191, 29);
             this.FillRandomButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.FillRandomButton.Name = "FillRandomButton";
-            this.FillRandomButton.Size = new System.Drawing.Size(88, 27);
+            this.FillRandomButton.Size = new System.Drawing.Size(88, 23);
             this.FillRandomButton.TabIndex = 1;
             this.FillRandomButton.Text = "Fill";
             this.FillRandomButton.UseVisualStyleBackColor = true;
@@ -118,7 +122,7 @@
             this.AmountRandomTextBox.Location = new System.Drawing.Point(18, 29);
             this.AmountRandomTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AmountRandomTextBox.Name = "AmountRandomTextBox";
-            this.AmountRandomTextBox.Size = new System.Drawing.Size(265, 23);
+            this.AmountRandomTextBox.Size = new System.Drawing.Size(165, 23);
             this.AmountRandomTextBox.TabIndex = 0;
             // 
             // VisualizationPanel
@@ -131,11 +135,41 @@
             this.VisualizationPanel.Size = new System.Drawing.Size(933, 148);
             this.VisualizationPanel.TabIndex = 4;
             // 
+            // ControlsPanel
+            // 
+            this.ControlsPanel.Controls.Add(this.BubbleSortButton);
+            this.ControlsPanel.Controls.Add(this.ClearButton);
+            this.ControlsPanel.Location = new System.Drawing.Point(302, 0);
+            this.ControlsPanel.Name = "ControlsPanel";
+            this.ControlsPanel.Size = new System.Drawing.Size(631, 147);
+            this.ControlsPanel.TabIndex = 5;
+            // 
+            // BubbleSortButton
+            // 
+            this.BubbleSortButton.Location = new System.Drawing.Point(19, 105);
+            this.BubbleSortButton.Name = "BubbleSortButton";
+            this.BubbleSortButton.Size = new System.Drawing.Size(75, 23);
+            this.BubbleSortButton.TabIndex = 1;
+            this.BubbleSortButton.Text = "BubbleSort";
+            this.BubbleSortButton.UseVisualStyleBackColor = true;
+            this.BubbleSortButton.Click += new System.EventHandler(this.BubbleSortButton_Click);
+            // 
+            // ClearButton
+            // 
+            this.ClearButton.Location = new System.Drawing.Point(19, 27);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(75, 23);
+            this.ClearButton.TabIndex = 0;
+            this.ClearButton.Text = "Clear";
+            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 519);
+            this.Controls.Add(this.ControlsPanel);
             this.Controls.Add(this.VisualizationPanel);
             this.Controls.Add(this.FillRandomPanel);
             this.Controls.Add(this.AddNumbersPanel);
@@ -146,6 +180,7 @@
             this.AddNumbersPanel.PerformLayout();
             this.FillRandomPanel.ResumeLayout(false);
             this.FillRandomPanel.PerformLayout();
+            this.ControlsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -161,6 +196,9 @@
         private System.Windows.Forms.TextBox AmountRandomTextBox;
         private System.Windows.Forms.Panel FillRandomPanel;
         private System.Windows.Forms.Panel VisualizationPanel;
+        private System.Windows.Forms.Panel ControlsPanel;
+        private System.Windows.Forms.Button BubbleSortButton;
+        private System.Windows.Forms.Button ClearButton;
     }
 }
 

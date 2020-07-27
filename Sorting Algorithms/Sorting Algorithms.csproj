@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="123\**" />
+    <EmbeddedResource Remove="123\**" />
+    <None Remove="123\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Algorithm\Algorithm.csproj" />
   </ItemGroup>
 
