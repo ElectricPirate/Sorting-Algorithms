@@ -12,6 +12,8 @@ namespace Sorting_Algorithms
         public VerticalProgressBar VerticalProgressBar { get; private set; }
         public System.Windows.Forms.Label Label { get; private set; }
         public int Value { get; private set; }
+        public int Max { get; set; } = 100;
+        public int Min { get; set; } = 0;
 
         public SortedItem(int value, int number)
         {
@@ -37,8 +39,8 @@ namespace Sorting_Algorithms
             VerticalProgressBar.Size = new System.Drawing.Size(19, 116);
             VerticalProgressBar.Step = 1;
             VerticalProgressBar.TabIndex = number;
-            VerticalProgressBar.Maximum = 100;
-            VerticalProgressBar.Minimum = 0;
+            VerticalProgressBar.Maximum = Max;
+            VerticalProgressBar.Minimum = Min;
             VerticalProgressBar.Value = Value;
             VerticalProgressBar.Style = Sorting_Algorithms.Styles.Solid;
             VerticalProgressBar.BorderStyle = Sorting_Algorithms.BorderStyles.None;

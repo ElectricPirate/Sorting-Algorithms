@@ -47,6 +47,25 @@ namespace Sorting_Algorithms
                     VisualizationPanel.Controls.Add(item.VerticalProgressBar);
                     VisualizationPanel.Controls.Add(item.Label);
                 }
+
+                #region Добавление неповторяющихся значений
+                //for (var i = 0; i < value; i++)
+                //{
+                //    while (true)
+                //    {
+                //        var item = new SortedItem(rnd.Next(0, 100), items.Count);
+
+                //        if (!items.Contains(item))
+                //        {
+                //            items.Add(item);
+                //            VisualizationPanel.Controls.Add(item.VerticalProgressBar);
+                //            VisualizationPanel.Controls.Add(item.Label);
+                //            break;
+                //        }
+                //    }
+                //}
+                #endregion
+
             }
 
             AmountRandomTextBox.Text = "";

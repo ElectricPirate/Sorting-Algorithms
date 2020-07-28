@@ -13,19 +13,54 @@ namespace Algorithm.Tests
         private Random rnd = new Random();
         private List<int> Items = new List<int>();
         List<int> Sorted = new List<int>();
+        private int numbers = 10000;
+        private int minNumber = 0;
+        private int maxNumber = 10000;
 
         [TestInitialize]
         public void Init()
         {
             Items.Clear();
 
-            for (var i = 0; i < 10000; i++)
+            for (var i = 0; i < numbers; i++)
             {
-                Items.Add(rnd.Next(0, 100));
+                var tmp = rnd.Next(minNumber, maxNumber);
+
+                #region Добавление неповторяющихся значений
+                //while (true)
+                //{
+                //    var tmp = rnd.Next(minNumber, maxNumber);
+
+                //    if (!Items.Contains(tmp))
+                //    {
+                //        Items.Add(tmp);
+                //        break;
+                //    }
+                //}
+                #endregion
+                
+                Items.Add(tmp);
             }
 
             Sorted.Clear();
             Sorted.AddRange(Items.OrderBy(x => x).ToArray());
+        }
+
+        [TestMethod()]
+        public void BaseSortTest()
+        {
+            // Arrange
+            var bases = new AlgorithmBase<int>();
+            bases.Items.AddRange(Items);
+
+            // Act
+            bases.Sort();
+
+            // Assert
+            for (var i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], bases.Items[i]);
+            }
         }
 
         [TestMethod()]
@@ -76,6 +111,23 @@ namespace Algorithm.Tests
             for (var i = 0; i < Items.Count; i++)
             {
                 Assert.AreEqual(Sorted[i], insert.Items[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void ShellSortTest()
+        {
+            // Arrange
+            var shell = new ShellSort<int>();
+            shell.Items.AddRange(Items);
+
+            // Act
+            shell.Sort();
+
+            // Assert
+            for (var i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], shell.Items[i]);
             }
         }
     }
