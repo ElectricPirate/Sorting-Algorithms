@@ -78,19 +78,22 @@ namespace Sorting_Algorithms
             bubble.SwopEvent += Bubble_SwopEvent;
             bubble.Sort();
         }
-
+        
         private void Bubble_SwopEvent(object sender, Tuple<SortedItem, SortedItem> e)
         {
-            var temp = e.Item1.Value;
-            e.Item1.SetValue(e.Item2.Value);
-            e.Item2.SetValue(temp);
+            var temp = e.Item1.Number;
+            e.Item1.SetPosition(e.Item2.Number);
+            e.Item2.SetPosition(temp);
+            e.Item1.SetColor(Color.Blue);
+            e.Item2.SetColor(Color.Blue);
             VisualizationPanel.Refresh();           
         }
 
         private void Bubble_CompareEvent(object sender, Tuple<SortedItem, SortedItem> e)
         {
             e.Item1.SetColor(Color.Red);
-            e.Item2.SetColor(Color.Green);            
+            e.Item2.SetColor(Color.Green);
+            VisualizationPanel.Refresh();
         }
 
         private void ClearButton_Click(object sender, EventArgs e)

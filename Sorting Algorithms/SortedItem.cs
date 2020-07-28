@@ -12,45 +12,50 @@ namespace Sorting_Algorithms
         public VerticalProgressBar VerticalProgressBar { get; private set; }
         public System.Windows.Forms.Label Label { get; private set; }
         public int Value { get; private set; }
+        public int Number { get; private set; }
         public int Max { get; set; } = 100;
         public int Min { get; set; } = 0;
 
         public SortedItem(int value, int number)
         {
             Value = value;
+            Number = number;
             VerticalProgressBar = new VerticalProgressBar();
             Label = new System.Windows.Forms.Label();
 
             var x = number * 20;
 
-            Label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            Label.Location = new System.Drawing.Point(x, 132);
+            Label.Font = new Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Label.Location = new Point(x, 132);
             Label.AutoSize = false;
             Label.TextAlign = ContentAlignment.MiddleCenter;
             Label.Name = "label" + number;
-            Label.Size = new System.Drawing.Size(19, 15);
+            Label.Size = new Size(19, 15);
             Label.TabIndex = 6;
             Label.Text = Value.ToString();
 
-            VerticalProgressBar.BackColor = System.Drawing.SystemColors.Control;
-            VerticalProgressBar.ForeColor = System.Drawing.SystemColors.Control;
-            VerticalProgressBar.Location = new System.Drawing.Point(x, 13);
+            VerticalProgressBar.BackColor = SystemColors.Control;
+            VerticalProgressBar.ForeColor = SystemColors.Control;
+            VerticalProgressBar.Location = new Point(x, 13);
             VerticalProgressBar.Name = "verticalProgressBar" + number;
-            VerticalProgressBar.Size = new System.Drawing.Size(19, 116);
+            VerticalProgressBar.Size = new Size(19, 116);
             VerticalProgressBar.Step = 1;
             VerticalProgressBar.TabIndex = number;
             VerticalProgressBar.Maximum = Max;
             VerticalProgressBar.Minimum = Min;
             VerticalProgressBar.Value = Value;
-            VerticalProgressBar.Style = Sorting_Algorithms.Styles.Solid;
-            VerticalProgressBar.BorderStyle = Sorting_Algorithms.BorderStyles.None;
+            VerticalProgressBar.Style = Styles.Solid;
+            VerticalProgressBar.BorderStyle = BorderStyles.None;
         }
 
-        public void SetValue(int value)
+        public void SetPosition(int number)
         {
-            Value = value;
-            VerticalProgressBar.Value = value;
-            Label.Text = value.ToString();
+            Number = number;
+            var x = number * 20;
+            VerticalProgressBar.Location = new Point(x, 13);
+            VerticalProgressBar.Name = "verticalProgressBar" + number;
+            Label.Location = new Point(x, 132);
+            Label.Name = "label" + number;
         }
 
         public void SetColor(Color color)
@@ -68,6 +73,11 @@ namespace Sorting_Algorithms
             {
                 throw new ArgumentException($"obj is not {nameof(SortedItem)}", nameof(obj));
             }
+        }
+
+        public override string ToString()
+        {
+            return Value.ToString();
         }
     }
 }
