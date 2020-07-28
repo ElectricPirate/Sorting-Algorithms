@@ -28,9 +28,9 @@ namespace Sorting_Algorithms
             {
                 var item = new SortedItem(value, items.Count);
                 items.Add(item);
-                VisualizationPanel.Controls.Add(item.VerticalProgressBar);
-                VisualizationPanel.Controls.Add(item.Label);
             }
+
+            RefreshItems();
 
             AddTextBox.Text = "";
         }
@@ -44,8 +44,6 @@ namespace Sorting_Algorithms
                 {
                     var item = new SortedItem(rnd.Next(0, 100), items.Count);
                     items.Add(item);
-                    VisualizationPanel.Controls.Add(item.VerticalProgressBar);
-                    VisualizationPanel.Controls.Add(item.Label);
                 }
 
                 #region Добавление неповторяющихся значений
@@ -68,15 +66,43 @@ namespace Sorting_Algorithms
 
             }
 
+            RefreshItems();
+
             AmountRandomTextBox.Text = "";
-        }  
+        }
+
+        private void DrawItems(List<SortedItem> items)
+        {
+            VisualizationPanel.Controls.Clear();
+            foreach (var item in items)
+            {
+                VisualizationPanel.Controls.Add(item.VerticalProgressBar);
+                VisualizationPanel.Controls.Add(item.Label);
+            }
+            VisualizationPanel.Refresh();
+        }
+
+        private void RefreshItems()
+        {
+            foreach (var item in items)
+            {
+                item.Refresh();
+            }
+
+            DrawItems(items);
+        }
 
         private void BubbleSortButton_Click(object sender, EventArgs e)
         {
+            RefreshItems();
+
             var bubble = new BubbleSort<SortedItem>(items);
             bubble.CompareEvent += Bubble_CompareEvent;
             bubble.SwopEvent += Bubble_SwopEvent;
-            bubble.Sort();
+            var time = bubble.Sort();
+            BubbleTimeLabel.Text = "Time: " + time.Seconds;
+            BubbleComparsionsLabel.Text = "Compare: " + bubble.ComparsionCount;
+            BubbleSwopsLabel.Text = "Swops: " + bubble.ComparsionCount;
         }
         
         private void Bubble_SwopEvent(object sender, Tuple<SortedItem, SortedItem> e)
@@ -102,5 +128,6 @@ namespace Sorting_Algorithms
             VisualizationPanel.Controls.Clear();
             VisualizationPanel.Refresh();
         }
+        
     }
 }

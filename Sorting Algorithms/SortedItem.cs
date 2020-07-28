@@ -13,6 +13,7 @@ namespace Sorting_Algorithms
         public System.Windows.Forms.Label Label { get; private set; }
         public int Value { get; private set; }
         public int Number { get; private set; }
+        public int StartNumber { get; private set; }
         public int Max { get; set; } = 100;
         public int Min { get; set; } = 0;
 
@@ -20,6 +21,7 @@ namespace Sorting_Algorithms
         {
             Value = value;
             Number = number;
+            StartNumber = number;
             VerticalProgressBar = new VerticalProgressBar();
             Label = new System.Windows.Forms.Label();
 
@@ -56,6 +58,16 @@ namespace Sorting_Algorithms
             VerticalProgressBar.Name = "verticalProgressBar" + number;
             Label.Location = new Point(x, 132);
             Label.Name = "label" + number;
+        }
+
+        public void Refresh()
+        {
+            Number = StartNumber;
+            var x = Number * 20;
+            VerticalProgressBar.Location = new Point(x, 13);
+            VerticalProgressBar.Name = "verticalProgressBar" + Number;
+            Label.Location = new Point(x, 132);
+            Label.Name = "label" + Number;
         }
 
         public void SetColor(Color color)
