@@ -38,11 +38,11 @@
             this.AmountRandomTextBox = new System.Windows.Forms.TextBox();
             this.VisualizationPanel = new System.Windows.Forms.Panel();
             this.ControlsPanel = new System.Windows.Forms.Panel();
+            this.BubbleSwopsLabel = new System.Windows.Forms.Label();
             this.BubbleComparsionsLabel = new System.Windows.Forms.Label();
             this.BubbleTimeLabel = new System.Windows.Forms.Label();
             this.BubbleSortButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
-            this.BubbleSwopsLabel = new System.Windows.Forms.Label();
             this.AddNumbersPanel.SuspendLayout();
             this.FillRandomPanel.SuspendLayout();
             this.ControlsPanel.SuspendLayout();
@@ -150,6 +150,15 @@
             this.ControlsPanel.Size = new System.Drawing.Size(631, 147);
             this.ControlsPanel.TabIndex = 5;
             // 
+            // BubbleSwopsLabel
+            // 
+            this.BubbleSwopsLabel.AutoSize = true;
+            this.BubbleSwopsLabel.Location = new System.Drawing.Point(19, 112);
+            this.BubbleSwopsLabel.Name = "BubbleSwopsLabel";
+            this.BubbleSwopsLabel.Size = new System.Drawing.Size(44, 15);
+            this.BubbleSwopsLabel.TabIndex = 4;
+            this.BubbleSwopsLabel.Text = "Swops:";
+            // 
             // BubbleComparsionsLabel
             // 
             this.BubbleComparsionsLabel.AutoSize = true;
@@ -188,15 +197,6 @@
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
-            // BubbleSwopsLabel
-            // 
-            this.BubbleSwopsLabel.AutoSize = true;
-            this.BubbleSwopsLabel.Location = new System.Drawing.Point(19, 112);
-            this.BubbleSwopsLabel.Name = "BubbleSwopsLabel";
-            this.BubbleSwopsLabel.Size = new System.Drawing.Size(44, 15);
-            this.BubbleSwopsLabel.TabIndex = 4;
-            this.BubbleSwopsLabel.Text = "Swops:";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -208,7 +208,7 @@
             this.Controls.Add(this.AddNumbersPanel);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Fun with algorithms";
             this.AddNumbersPanel.ResumeLayout(false);
             this.AddNumbersPanel.PerformLayout();
             this.FillRandomPanel.ResumeLayout(false);

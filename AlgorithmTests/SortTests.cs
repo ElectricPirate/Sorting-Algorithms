@@ -15,7 +15,7 @@ namespace Algorithm.Tests
         List<int> Sorted = new List<int>();
         private int numbers = 10000;
         private int minNumber = 0;
-        private int maxNumber = 10000;
+        private int maxNumber = 100;
 
         [TestInitialize]
         public void Init()
@@ -128,6 +128,23 @@ namespace Algorithm.Tests
             for (var i = 0; i < Items.Count; i++)
             {
                 Assert.AreEqual(Sorted[i], shell.Items[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void TreeSortTest()
+        {
+            // Arrange
+            var tree = new TreeSort<int>();
+            tree.Items.AddRange(Items);
+
+            // Act
+            tree.Sort();
+
+            // Assert
+            for (var i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], tree.Items[i]);
             }
         }
     }
