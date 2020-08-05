@@ -91,21 +91,8 @@ namespace Sorting_Algorithms
 
             DrawItems(items);
         }
-
-        private void BubbleSortButton_Click(object sender, EventArgs e)
-        {
-            RefreshItems();
-
-            var bubble = new BubbleSort<SortedItem>(items);
-            bubble.CompareEvent += Bubble_CompareEvent;
-            bubble.SwopEvent += Bubble_SwopEvent;
-            var time = bubble.Sort();
-            BubbleTimeLabel.Text = "Time: " + time.Seconds;
-            BubbleComparsionsLabel.Text = "Compare: " + bubble.ComparsionCount;
-            BubbleSwopsLabel.Text = "Swops: " + bubble.ComparsionCount;
-        }
         
-        private void Bubble_SwopEvent(object sender, Tuple<SortedItem, SortedItem> e)
+        private void Algorithm_SwopEvent(object sender, Tuple<SortedItem, SortedItem> e)
         {
             var temp = e.Item1.Number;
             e.Item1.SetPosition(e.Item2.Number);
@@ -115,11 +102,16 @@ namespace Sorting_Algorithms
             VisualizationPanel.Refresh();           
         }
 
-        private void Bubble_CompareEvent(object sender, Tuple<SortedItem, SortedItem> e)
+        private void Algorithm_CompareEvent(object sender, Tuple<SortedItem, SortedItem> e)
         {
             e.Item1.SetColor(Color.Red);
             e.Item2.SetColor(Color.Green);
             VisualizationPanel.Refresh();
+
+            Thread.Sleep(50);
+
+            e.Item1.SetColor(Color.Blue);
+            e.Item2.SetColor(Color.Blue);
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
@@ -128,6 +120,53 @@ namespace Sorting_Algorithms
             VisualizationPanel.Controls.Clear();
             VisualizationPanel.Refresh();
         }
-        
+
+        private void BttnSort_Click(AlgorithmBase<SortedItem> algorithm)
+        {
+            RefreshItems();
+
+            algorithm.CompareEvent += Algorithm_CompareEvent;
+            algorithm.SwopEvent += Algorithm_SwopEvent;
+            var time = algorithm.Sort();
+
+            TimeLabel.Text = "Time: " + time.Seconds;
+            ComparsionsLabel.Text = "Compare: " + algorithm.ComparsionCount;
+            SwopsLabel.Text = "Swops: " + algorithm.ComparsionCount;
+        }
+
+        private void BubbleSortButton_Click(object sender, EventArgs e)
+        {
+            var bubble = new BubbleSort<SortedItem>(items);
+            BttnSort_Click(bubble);
+        }
+        private void CocktailSortButton_Click(object sender, EventArgs e)
+        {
+            var cocktail = new CocktailSort<SortedItem>(items);
+            BttnSort_Click(cocktail);
+        }
+
+        private void InsertSortButton_Click(object sender, EventArgs e)
+        {
+            var insert = new InsertSort<SortedItem>(items);
+            BttnSort_Click(insert);
+        }
+
+        private void ShellSortButton_Click(object sender, EventArgs e)
+        {
+            var shell = new ShellSort<SortedItem>(items);
+            BttnSort_Click(shell);
+        }
+
+        private void TreeSortButton_Click(object sender, EventArgs e)
+        {
+            var tree = new TreeSort<SortedItem>(items);
+            BttnSort_Click(tree);
+        }
+
+        private void HeapSortButton_Click(object sender, EventArgs e)
+        {
+            var heap = new HeapSort<SortedItem>(items);
+            BttnSort_Click(heap);
+        }
     }
 }

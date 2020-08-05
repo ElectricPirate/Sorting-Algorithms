@@ -10,6 +10,9 @@ namespace Algorithm
     /// <typeparam name="T"></typeparam>
     public class CocktailSort<T> : AlgorithmBase<T> where T : IComparable
     {
+        public CocktailSort(IEnumerable<T> items) : base(items) { }
+
+        public CocktailSort() { }
         protected override void MakeSort()
         {
             int left = 0;
