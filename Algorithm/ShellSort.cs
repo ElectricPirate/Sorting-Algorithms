@@ -5,6 +5,10 @@ using System.Text;
 
 namespace Algorithm
 {
+    /// <summary>
+    /// Shell's sorting algorithm
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class ShellSort<T> : AlgorithmBase<T> where T : IComparable
     {
         public ShellSort(IEnumerable<T> items) : base(items) { }

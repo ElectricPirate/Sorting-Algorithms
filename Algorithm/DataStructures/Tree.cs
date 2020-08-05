@@ -4,9 +4,20 @@ using System.Text;
 
 namespace Algorithm.DataStructures
 {
+    /// <summary>
+    /// Binary search tree
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Tree<T> where T : IComparable
     {
+        /// <summary>
+        /// Root of tree
+        /// </summary>
         public Node<T> Root { get; private set; }
+
+        /// <summary>
+        /// Count of nodes in tree
+        /// </summary>
         public int Count { get; private set; }
 
         public Tree() { }
@@ -19,6 +30,10 @@ namespace Algorithm.DataStructures
             }
         }
 
+        /// <summary>
+        /// Insert data in new node into the tree
+        /// </summary>
+        /// <param name="data"></param>
         public void Add(T data)
         {
             if (Root == null)
@@ -32,6 +47,10 @@ namespace Algorithm.DataStructures
             Count++;
         }
 
+        /// <summary>
+        /// Prefix traverse
+        /// </summary>
+        /// <returns></returns>
         public List<T> Preorder()
         {
             if (Root == null)
@@ -64,6 +83,10 @@ namespace Algorithm.DataStructures
             return list;
         }
 
+        /// <summary>
+        /// Postfix traverse
+        /// </summary>
+        /// <returns></returns>
         public List<T> Postorder()
         {
             if (Root == null)
@@ -96,6 +119,10 @@ namespace Algorithm.DataStructures
             return list;
         }
 
+        /// <summary>
+        /// Infix traverse
+        /// </summary>
+        /// <returns></returns>
         public List<T> Inorder()
         {
             if (Root == null)

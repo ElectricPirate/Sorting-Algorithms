@@ -4,10 +4,20 @@ using System.Diagnostics;
 
 namespace Algorithm
 {
+    /// <summary>
+    /// Base class of all algotithms
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class AlgorithmBase<T> where T: IComparable
     {
+        /// <summary>
+        /// Swops counter
+        /// </summary>
         public int SwopCount { get; protected set; } = 0;
 
+        /// <summary>
+        /// Comparsion counter
+        /// </summary>
         public int ComparsionCount { get; protected set; } = 0;
         public List<T> Items { get; set; } = new List<T>();
 
@@ -31,13 +41,13 @@ namespace Algorithm
                 var temp = Items[positionA];
                 Items[positionA] = Items[positionB];
                 Items[positionB] = temp;
-
-                
-
-                
             }
         }
 
+        /// <summary>
+        /// Sorting elements with timed
+        /// </summary>
+        /// <returns></returns>
         public TimeSpan Sort()
         {
             SwopCount = 0;

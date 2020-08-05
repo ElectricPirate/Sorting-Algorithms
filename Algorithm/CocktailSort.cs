@@ -4,6 +4,10 @@ using System.Text;
 
 namespace Algorithm
 {
+    /// <summary>
+    /// Cocktail shaker sorting algorithm
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class CocktailSort<T> : AlgorithmBase<T> where T : IComparable
     {
         protected override void MakeSort()

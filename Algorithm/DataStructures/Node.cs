@@ -4,6 +4,10 @@ using System.Text;
 
 namespace Algorithm.DataStructures
 {
+    /// <summary>
+    /// Node of binary tree
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Node<T> : IComparable where T: IComparable
     {
         public T Data { get; private set; }
@@ -15,6 +19,10 @@ namespace Algorithm.DataStructures
             Data = data;
         }
 
+        /// <summary>
+        /// Add data in new node into the tree
+        /// </summary>
+        /// <param name="data"></param>
         public void Add(T data)
         {
             var node = new Node<T>(data);
@@ -51,7 +59,7 @@ namespace Algorithm.DataStructures
             }
             else
             {
-                throw new Exception("Несовпадение типов");
+                throw new Exception("Types not equals.");
             }
         }
 

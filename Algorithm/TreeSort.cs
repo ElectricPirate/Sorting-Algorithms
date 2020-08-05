@@ -5,6 +5,10 @@ using Algorithm.DataStructures;
 
 namespace Algorithm
 {
+    /// <summary>
+    /// Tree sorting algorithm
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class TreeSort<T> : AlgorithmBase<T> where T : IComparable
     {
         protected override void MakeSort()

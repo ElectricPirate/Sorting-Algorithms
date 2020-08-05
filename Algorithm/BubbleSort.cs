@@ -4,6 +4,10 @@ using System.Text;
 
 namespace Algorithm
 {
+    /// <summary>
+    /// Bubble sorting algorithm
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class BubbleSort<T> : AlgorithmBase<T> where T: IComparable
     {
         public BubbleSort(IEnumerable<T> items) : base(items) { }

@@ -4,6 +4,10 @@ using System.Text;
 
 namespace Algorithm
 {
+    /// <summary>
+    /// Insertion sorting algorithm
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class InsertSort<T> : AlgorithmBase<T> where T : IComparable
     {
         protected override void MakeSort()
