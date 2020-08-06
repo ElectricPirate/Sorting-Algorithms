@@ -168,5 +168,11 @@ namespace Sorting_Algorithms
             var heap = new HeapSort<SortedItem>(items);
             BttnSort_Click(heap);
         }
+
+        private void SelectionSortButton_Click(object sender, EventArgs e)
+        {
+            var selection = new SelectionSort<SortedItem>(items);
+            BttnSort_Click(selection);
+        }
     }
 }
