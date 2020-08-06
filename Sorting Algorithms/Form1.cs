@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Algorithm;
+using Algorithm.DataStructures;
 
 namespace Sorting_Algorithms
 {
@@ -94,12 +95,24 @@ namespace Sorting_Algorithms
         
         private void Algorithm_SwopEvent(object sender, Tuple<SortedItem, SortedItem> e)
         {
+            e.Item1.SetColor(Color.Aqua);
+            e.Item2.SetColor(Color.Brown);
+            VisualizationPanel.Refresh();
+
+            Thread.Sleep(20);
+
             var temp = e.Item1.Number;
             e.Item1.SetPosition(e.Item2.Number);
             e.Item2.SetPosition(temp);
+            VisualizationPanel.Refresh();
+
+            Thread.Sleep(20);
+
             e.Item1.SetColor(Color.Blue);
             e.Item2.SetColor(Color.Blue);
-            VisualizationPanel.Refresh();           
+            VisualizationPanel.Refresh();
+
+            Thread.Sleep(20);
         }
 
         private void Algorithm_CompareEvent(object sender, Tuple<SortedItem, SortedItem> e)
@@ -108,10 +121,13 @@ namespace Sorting_Algorithms
             e.Item2.SetColor(Color.Green);
             VisualizationPanel.Refresh();
 
-            Thread.Sleep(50);
+            Thread.Sleep(20);
 
             e.Item1.SetColor(Color.Blue);
             e.Item2.SetColor(Color.Blue);
+            VisualizationPanel.Refresh();
+
+            Thread.Sleep(20);
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
@@ -124,6 +140,13 @@ namespace Sorting_Algorithms
         private void BttnSort_Click(AlgorithmBase<SortedItem> algorithm)
         {
             RefreshItems();
+
+            for (int i = 0; i < algorithm.Items.Count; i++)
+            {
+                algorithm.Items[i].SetPosition(i);
+            }
+
+            VisualizationPanel.Refresh();
 
             algorithm.CompareEvent += Algorithm_CompareEvent;
             algorithm.SwopEvent += Algorithm_SwopEvent;
@@ -163,16 +186,16 @@ namespace Sorting_Algorithms
             BttnSort_Click(tree);
         }
 
-        private void HeapSortButton_Click(object sender, EventArgs e)
-        {
-            var heap = new HeapSort<SortedItem>(items);
-            BttnSort_Click(heap);
-        }
-
         private void SelectionSortButton_Click(object sender, EventArgs e)
         {
             var selection = new SelectionSort<SortedItem>(items);
             BttnSort_Click(selection);
+        }
+
+        private void HeapSortButton_Click(object sender, EventArgs e)
+        {
+            var heap = new HeapSort<SortedItem>(items);
+            BttnSort_Click(heap);
         }
     }
 }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Algorithm.DataStructures;
 
 namespace Algorithm.Tests
 {
@@ -13,9 +14,9 @@ namespace Algorithm.Tests
         private Random rnd = new Random();
         private List<int> Items = new List<int>();
         List<int> Sorted = new List<int>();
-        private int numbers = 10000;
+        private int numbers = 1000;
         private int minNumber = 0;
-        private int maxNumber = 10000;
+        private int maxNumber = 1000;
 
         [TestInitialize]
         public void Init()
@@ -152,8 +153,7 @@ namespace Algorithm.Tests
         public void HeapSortTest()
         {
             // Arrange
-            var heap = new HeapSort<int>();
-            heap.Items.AddRange(Items);
+            var heap = new HeapSort<int>(Items);
 
             // Act
             heap.Sort();
