@@ -14,9 +14,9 @@ namespace Algorithm.Tests
         private Random rnd = new Random();
         private List<int> Items = new List<int>();
         List<int> Sorted = new List<int>();
-        private int numbers = 1000;
+        private int numbers = 10000;
         private int minNumber = 0;
-        private int maxNumber = 1000;
+        private int maxNumber = 10000;
 
         [TestInitialize]
         public void Init()
@@ -179,6 +179,23 @@ namespace Algorithm.Tests
             for (var i = 0; i < Items.Count; i++)
             {
                 Assert.AreEqual(Sorted[i], select.Items[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void GnomeSortTest()
+        {
+            // Arrange
+            var gnome = new GnomeSort<int>();
+            gnome.Items.AddRange(Items);
+
+            // Act
+            gnome.Sort();
+
+            // Assert
+            for (var i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], gnome.Items[i]);
             }
         }
     }

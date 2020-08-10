@@ -197,5 +197,11 @@ namespace Sorting_Algorithms
             var heap = new HeapSort<SortedItem>(items);
             BttnSort_Click(heap);
         }
+
+        private void GnomeSortButton_Click(object sender, EventArgs e)
+        {
+            var gnome = new GnomeSort<SortedItem>(items);
+            BttnSort_Click(gnome);
+        }
     }
 }
