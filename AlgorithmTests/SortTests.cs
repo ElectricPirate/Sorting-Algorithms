@@ -136,8 +136,7 @@ namespace Algorithm.Tests
         public void TreeSortTest()
         {
             // Arrange
-            var tree = new TreeSort<int>();
-            tree.Items.AddRange(Items);
+            var tree = new TreeSort<int>(Items);
 
             // Act
             tree.Sort();
