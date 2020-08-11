@@ -197,5 +197,22 @@ namespace Algorithm.Tests
                 Assert.AreEqual(Sorted[i], gnome.Items[i]);
             }
         }
+
+        [TestMethod()]
+        public void RadixLSDSortTest()
+        {
+            // Arrange
+            var radixLSD = new RadixLSDSort<int>();
+            radixLSD.Items.AddRange(Items);
+
+            // Act
+            radixLSD.Sort();
+
+            // Assert
+            for (var i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], radixLSD.Items[i]);
+            }
+        }
     }
 }
