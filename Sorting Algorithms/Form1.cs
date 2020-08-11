@@ -235,5 +235,17 @@ namespace Sorting_Algorithms
             var merge = new MergeSort<SortedItem>(items);
             BttnSort_Click(merge);
         }
+
+        private void RadixLSDSortButton_Click(object sender, EventArgs e)
+        {
+            var radixLsd = new RadixLSDSort<SortedItem>(items);
+            BttnSort_Click(radixLsd);
+        }
+
+        private void RadixMSDSortButton_Click(object sender, EventArgs e)
+        {
+            var radixMsd = new RadixMSDSort<SortedItem>(items);
+            BttnSort_Click(radixMsd);
+        }
     }
 }

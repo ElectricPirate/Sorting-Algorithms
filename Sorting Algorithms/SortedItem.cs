@@ -91,5 +91,10 @@ namespace Sorting_Algorithms
         {
             return Value.ToString();
         }
+
+        public override int GetHashCode()
+        {
+            return Value;
+        }
     }
 }

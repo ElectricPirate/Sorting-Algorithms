@@ -14,9 +14,9 @@ namespace Algorithm.Tests
         private Random rnd = new Random();
         private List<int> Items = new List<int>();
         List<int> Sorted = new List<int>();
-        private int numbers = 10000;
+        private int numbers = 1000;
         private int minNumber = 0;
-        private int maxNumber = 10000;
+        private int maxNumber = 1000;
 
         [TestInitialize]
         public void Init()

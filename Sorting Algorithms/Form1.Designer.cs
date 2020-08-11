@@ -38,6 +38,8 @@
             this.AmountRandomTextBox = new System.Windows.Forms.TextBox();
             this.VisualizationPanel = new System.Windows.Forms.Panel();
             this.ControlsPanel = new System.Windows.Forms.Panel();
+            this.RadixMSDSortButton = new System.Windows.Forms.Button();
+            this.RadixLSDSortButton = new System.Windows.Forms.Button();
             this.MergeSortButton = new System.Windows.Forms.Button();
             this.TreeSortButton = new System.Windows.Forms.Button();
             this.GnomeSortButton = new System.Windows.Forms.Button();
@@ -148,6 +150,8 @@
             // 
             // ControlsPanel
             // 
+            this.ControlsPanel.Controls.Add(this.RadixMSDSortButton);
+            this.ControlsPanel.Controls.Add(this.RadixLSDSortButton);
             this.ControlsPanel.Controls.Add(this.MergeSortButton);
             this.ControlsPanel.Controls.Add(this.TreeSortButton);
             this.ControlsPanel.Controls.Add(this.GnomeSortButton);
@@ -166,9 +170,29 @@
             this.ControlsPanel.Size = new System.Drawing.Size(631, 147);
             this.ControlsPanel.TabIndex = 5;
             // 
+            // RadixMSDSortButton
+            // 
+            this.RadixMSDSortButton.Location = new System.Drawing.Point(408, 58);
+            this.RadixMSDSortButton.Name = "RadixMSDSortButton";
+            this.RadixMSDSortButton.Size = new System.Drawing.Size(85, 23);
+            this.RadixMSDSortButton.TabIndex = 14;
+            this.RadixMSDSortButton.Text = "Radix MSD Sort";
+            this.RadixMSDSortButton.UseVisualStyleBackColor = true;
+            this.RadixMSDSortButton.Click += new System.EventHandler(this.RadixMSDSortButton_Click);
+            // 
+            // RadixLSDSortButton
+            // 
+            this.RadixLSDSortButton.Location = new System.Drawing.Point(408, 29);
+            this.RadixLSDSortButton.Name = "RadixLSDSortButton";
+            this.RadixLSDSortButton.Size = new System.Drawing.Size(85, 23);
+            this.RadixLSDSortButton.TabIndex = 13;
+            this.RadixLSDSortButton.Text = "RadixLSD Sort";
+            this.RadixLSDSortButton.UseVisualStyleBackColor = true;
+            this.RadixLSDSortButton.Click += new System.EventHandler(this.RadixLSDSortButton_Click);
+            // 
             // MergeSortButton
             // 
-            this.MergeSortButton.Location = new System.Drawing.Point(499, 28);
+            this.MergeSortButton.Location = new System.Drawing.Point(317, 58);
             this.MergeSortButton.Name = "MergeSortButton";
             this.MergeSortButton.Size = new System.Drawing.Size(85, 23);
             this.MergeSortButton.TabIndex = 12;
@@ -178,7 +202,7 @@
             // 
             // TreeSortButton
             // 
-            this.TreeSortButton.Location = new System.Drawing.Point(408, 57);
+            this.TreeSortButton.Location = new System.Drawing.Point(317, 87);
             this.TreeSortButton.Name = "TreeSortButton";
             this.TreeSortButton.Size = new System.Drawing.Size(85, 23);
             this.TreeSortButton.TabIndex = 11;
@@ -188,7 +212,7 @@
             // 
             // GnomeSortButton
             // 
-            this.GnomeSortButton.Location = new System.Drawing.Point(408, 28);
+            this.GnomeSortButton.Location = new System.Drawing.Point(317, 29);
             this.GnomeSortButton.Name = "GnomeSortButton";
             this.GnomeSortButton.Size = new System.Drawing.Size(85, 23);
             this.GnomeSortButton.TabIndex = 10;
@@ -198,7 +222,7 @@
             // 
             // HeapSortButton
             // 
-            this.HeapSortButton.Location = new System.Drawing.Point(317, 57);
+            this.HeapSortButton.Location = new System.Drawing.Point(226, 86);
             this.HeapSortButton.Name = "HeapSortButton";
             this.HeapSortButton.Size = new System.Drawing.Size(85, 23);
             this.HeapSortButton.TabIndex = 9;
@@ -208,7 +232,7 @@
             // 
             // SelectionSortButton
             // 
-            this.SelectionSortButton.Location = new System.Drawing.Point(317, 28);
+            this.SelectionSortButton.Location = new System.Drawing.Point(226, 28);
             this.SelectionSortButton.Name = "SelectionSortButton";
             this.SelectionSortButton.Size = new System.Drawing.Size(85, 23);
             this.SelectionSortButton.TabIndex = 8;
@@ -228,7 +252,7 @@
             // 
             // InsertSortButton
             // 
-            this.InsertSortButton.Location = new System.Drawing.Point(226, 28);
+            this.InsertSortButton.Location = new System.Drawing.Point(135, 86);
             this.InsertSortButton.Name = "InsertSortButton";
             this.InsertSortButton.Size = new System.Drawing.Size(85, 23);
             this.InsertSortButton.TabIndex = 6;
@@ -297,7 +321,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 519);
+            this.ClientSize = new System.Drawing.Size(933, 302);
             this.Controls.Add(this.ControlsPanel);
             this.Controls.Add(this.VisualizationPanel);
             this.Controls.Add(this.FillRandomPanel);
@@ -340,6 +364,8 @@
         private System.Windows.Forms.Button GnomeSortButton;
         private System.Windows.Forms.Button TreeSortButton;
         private System.Windows.Forms.Button MergeSortButton;
+        private System.Windows.Forms.Button RadixMSDSortButton;
+        private System.Windows.Forms.Button RadixLSDSortButton;
     }
 }
 

@@ -15,7 +15,11 @@ namespace Algorithm
         {
             var length = GetMaxLength(Items);
             var result = SortCollection(Items, length - 1);
-            Items = result;
+
+            for (int i = 0; i < result.Count; i++)
+            {
+                Set(i, result[i]);
+            }
         }
 
         private List<T> SortCollection(List<T> collection, int step)
@@ -35,8 +39,6 @@ namespace Algorithm
                 var value = i % (int)Math.Pow(10, step + 1) / (int)Math.Pow(10, step);
                 groups[value].Add(item);
             }
-
-            collection.Clear();
 
             foreach (var group in groups)
             {
