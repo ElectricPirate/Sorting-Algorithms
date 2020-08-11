@@ -209,5 +209,11 @@ namespace Sorting_Algorithms
             var tree = new TreeSort<SortedItem>(items);
             BttnSort_Click(tree);
         }
+
+        private void MergeSortButton_Click(object sender, EventArgs e)
+        {
+            var merge = new MergeSort<SortedItem>(items);
+            BttnSort_Click(merge);
+        }
     }
 }
