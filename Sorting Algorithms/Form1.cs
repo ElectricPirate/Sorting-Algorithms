@@ -93,7 +93,7 @@ namespace Sorting_Algorithms
             DrawItems(items);
         }
         
-        private void Algorithm_SwopEvent(object sender, Tuple<SortedItem, SortedItem> e)
+        private void AlgorithmSwopEvent(object sender, Tuple<SortedItem, SortedItem> e)
         {
             e.Item1.SetColor(Color.Aqua);
             e.Item2.SetColor(Color.Brown);
@@ -115,7 +115,7 @@ namespace Sorting_Algorithms
             Thread.Sleep(20);
         }
 
-        private void Algorithm_CompareEvent(object sender, Tuple<SortedItem, SortedItem> e)
+        private void AlgorithmCompareEvent(object sender, Tuple<SortedItem, SortedItem> e)
         {
             e.Item1.SetColor(Color.Red);
             e.Item2.SetColor(Color.Green);
@@ -130,11 +130,30 @@ namespace Sorting_Algorithms
             Thread.Sleep(20);
         }
 
+        private void AlgorithmSetEvent(object sender, Tuple<int, SortedItem> e)
+        {
+            e.Item2.SetColor(Color.Red);
+            VisualizationPanel.Refresh();
+            Thread.Sleep(20);
+
+            e.Item2.SetPosition(e.Item1);
+            VisualizationPanel.Refresh();
+            Thread.Sleep(20);
+
+            e.Item2.SetColor(Color.Blue);
+            VisualizationPanel.Refresh();
+            Thread.Sleep(20);
+        }
+
         private void ClearButton_Click(object sender, EventArgs e)
         {
             items.Clear();
             VisualizationPanel.Controls.Clear();
             VisualizationPanel.Refresh();
+
+            TimeLabel.Text = "Time: ";
+            ComparsionsLabel.Text = "Compare: ";
+            SwopsLabel.Text = "Swops: ";
         }
 
         private void BttnSort_Click(AlgorithmBase<SortedItem> algorithm)
@@ -148,8 +167,9 @@ namespace Sorting_Algorithms
 
             VisualizationPanel.Refresh();
 
-            algorithm.CompareEvent += Algorithm_CompareEvent;
-            algorithm.SwopEvent += Algorithm_SwopEvent;
+            algorithm.CompareEvent += AlgorithmCompareEvent;
+            algorithm.SwopEvent += AlgorithmSwopEvent;
+            algorithm.SetEvent += AlgorithmSetEvent;
             var time = algorithm.Sort();
 
             TimeLabel.Text = "Time: " + time.Seconds;
