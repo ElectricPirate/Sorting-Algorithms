@@ -192,7 +192,7 @@
             // 
             // MergeSortButton
             // 
-            this.MergeSortButton.Location = new System.Drawing.Point(317, 58);
+            this.MergeSortButton.Location = new System.Drawing.Point(317, 87);
             this.MergeSortButton.Name = "MergeSortButton";
             this.MergeSortButton.Size = new System.Drawing.Size(85, 23);
             this.MergeSortButton.TabIndex = 12;
@@ -202,7 +202,7 @@
             // 
             // TreeSortButton
             // 
-            this.TreeSortButton.Location = new System.Drawing.Point(317, 87);
+            this.TreeSortButton.Location = new System.Drawing.Point(317, 58);
             this.TreeSortButton.Name = "TreeSortButton";
             this.TreeSortButton.Size = new System.Drawing.Size(85, 23);
             this.TreeSortButton.TabIndex = 11;
