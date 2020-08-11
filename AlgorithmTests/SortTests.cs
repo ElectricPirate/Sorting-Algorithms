@@ -214,5 +214,22 @@ namespace Algorithm.Tests
                 Assert.AreEqual(Sorted[i], radixLSD.Items[i]);
             }
         }
+
+        [TestMethod()]
+        public void RadixMSDSortTest()
+        {
+            // Arrange
+            var radixMSD = new RadixMSDSort<int>();
+            radixMSD.Items.AddRange(Items);
+
+            // Act
+            radixMSD.Sort();
+
+            // Assert
+            for (var i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], radixMSD.Items[i]);
+            }
+        }
     }
 }
