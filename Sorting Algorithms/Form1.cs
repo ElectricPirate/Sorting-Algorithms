@@ -162,7 +162,7 @@ namespace Sorting_Algorithms
 
             for (int i = 0; i < algorithm.Items.Count; i++)
             {
-                algorithm.Items[i].SetPosition(i);
+               algorithm.Items[i].SetPosition(i);
             }
 
             VisualizationPanel.Refresh();
@@ -252,6 +252,24 @@ namespace Sorting_Algorithms
         {
             var quick = new QuickSort<SortedItem>(items);
             BttnSort_Click(quick);
+        }
+
+        private void BogoSortButton_Click(object sender, EventArgs e)
+        {
+            var bogo = new BogoSort<SortedItem>(items);
+
+            if (bogo.Items.Count >= 5)
+            {
+                var message =
+                    "Bogosort is not really works algorithm. Not recommend start with amount 5 or above items.";
+                var caption = "You really want to start?";
+                var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    BttnSort_Click(bogo);
+                }
+            }
         }
     }
 }

@@ -38,6 +38,8 @@
             this.AmountRandomTextBox = new System.Windows.Forms.TextBox();
             this.VisualizationPanel = new System.Windows.Forms.Panel();
             this.ControlsPanel = new System.Windows.Forms.Panel();
+            this.BogoSortButton = new System.Windows.Forms.Button();
+            this.QuickSortButton = new System.Windows.Forms.Button();
             this.RadixMSDSortButton = new System.Windows.Forms.Button();
             this.RadixLSDSortButton = new System.Windows.Forms.Button();
             this.MergeSortButton = new System.Windows.Forms.Button();
@@ -53,10 +55,11 @@
             this.TimeLabel = new System.Windows.Forms.Label();
             this.BubbleSortButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
-            this.QuickSortButton = new System.Windows.Forms.Button();
+            this.DangerousGroup = new System.Windows.Forms.GroupBox();
             this.AddNumbersPanel.SuspendLayout();
             this.FillRandomPanel.SuspendLayout();
             this.ControlsPanel.SuspendLayout();
+            this.DangerousGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddNumbersPanel
@@ -151,6 +154,7 @@
             // 
             // ControlsPanel
             // 
+            this.ControlsPanel.Controls.Add(this.DangerousGroup);
             this.ControlsPanel.Controls.Add(this.QuickSortButton);
             this.ControlsPanel.Controls.Add(this.RadixMSDSortButton);
             this.ControlsPanel.Controls.Add(this.RadixLSDSortButton);
@@ -171,6 +175,28 @@
             this.ControlsPanel.Name = "ControlsPanel";
             this.ControlsPanel.Size = new System.Drawing.Size(631, 147);
             this.ControlsPanel.TabIndex = 5;
+            // 
+            // BogoSortButton
+            // 
+            this.BogoSortButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BogoSortButton.Location = new System.Drawing.Point(6, 17);
+            this.BogoSortButton.Name = "BogoSortButton";
+            this.BogoSortButton.Size = new System.Drawing.Size(81, 23);
+            this.BogoSortButton.TabIndex = 16;
+            this.BogoSortButton.Text = "BogoSort";
+            this.BogoSortButton.UseVisualStyleBackColor = true;
+            this.BogoSortButton.Click += new System.EventHandler(this.BogoSortButton_Click);
+            // 
+            // QuickSortButton
+            // 
+            this.QuickSortButton.Location = new System.Drawing.Point(408, 87);
+            this.QuickSortButton.Name = "QuickSortButton";
+            this.QuickSortButton.Size = new System.Drawing.Size(85, 23);
+            this.QuickSortButton.TabIndex = 15;
+            this.QuickSortButton.Text = "QuickSort";
+            this.QuickSortButton.UseVisualStyleBackColor = true;
+            this.QuickSortButton.Click += new System.EventHandler(this.QuickSortButton_Click);
             // 
             // RadixMSDSortButton
             // 
@@ -319,15 +345,16 @@
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
-            // QuickSortButton
+            // DangerousGroup
             // 
-            this.QuickSortButton.Location = new System.Drawing.Point(408, 87);
-            this.QuickSortButton.Name = "QuickSortButton";
-            this.QuickSortButton.Size = new System.Drawing.Size(85, 23);
-            this.QuickSortButton.TabIndex = 15;
-            this.QuickSortButton.Text = "QuickSort";
-            this.QuickSortButton.UseVisualStyleBackColor = true;
-            this.QuickSortButton.Click += new System.EventHandler(this.QuickSortButton_Click);
+            this.DangerousGroup.Controls.Add(this.BogoSortButton);
+            this.DangerousGroup.ForeColor = System.Drawing.Color.DarkRed;
+            this.DangerousGroup.Location = new System.Drawing.Point(499, 12);
+            this.DangerousGroup.Name = "DangerousGroup";
+            this.DangerousGroup.Size = new System.Drawing.Size(107, 100);
+            this.DangerousGroup.TabIndex = 0;
+            this.DangerousGroup.TabStop = false;
+            this.DangerousGroup.Text = "Dangerous zone";
             // 
             // Form1
             // 
@@ -347,6 +374,7 @@
             this.FillRandomPanel.PerformLayout();
             this.ControlsPanel.ResumeLayout(false);
             this.ControlsPanel.PerformLayout();
+            this.DangerousGroup.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -379,6 +407,8 @@
         private System.Windows.Forms.Button RadixMSDSortButton;
         private System.Windows.Forms.Button RadixLSDSortButton;
         private System.Windows.Forms.Button QuickSortButton;
+        private System.Windows.Forms.Button BogoSortButton;
+        private System.Windows.Forms.GroupBox DangerousGroup;
     }
 }
 

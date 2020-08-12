@@ -14,9 +14,9 @@ namespace Algorithm.Tests
         private Random rnd = new Random();
         private List<int> Items = new List<int>();
         List<int> Sorted = new List<int>();
-        private int numbers = 10000;
+        private int numbers = 12;
         private int minNumber = 0;
-        private int maxNumber = 10000;
+        private int maxNumber = 10;
 
         [TestInitialize]
         public void Init()
@@ -263,6 +263,23 @@ namespace Algorithm.Tests
             for (var i = 0; i < Items.Count; i++)
             {
                 Assert.AreEqual(Sorted[i], quick.Items[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void BogoSortTest()
+        {
+            // Arrange
+            var bogo = new BogoSort<int>();
+            bogo.Items.AddRange(Items);
+
+            // Act
+            bogo.Sort();
+
+            // Assert
+            for (var i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], bogo.Items[i]);
             }
         }
     }
