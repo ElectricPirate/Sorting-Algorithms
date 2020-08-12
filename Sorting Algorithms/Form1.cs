@@ -247,5 +247,11 @@ namespace Sorting_Algorithms
             var radixMsd = new RadixMSDSort<SortedItem>(items);
             BttnSort_Click(radixMsd);
         }
+
+        private void QuickSortButton_Click(object sender, EventArgs e)
+        {
+            var quick = new QuickSort<SortedItem>(items);
+            BttnSort_Click(quick);
+        }
     }
 }

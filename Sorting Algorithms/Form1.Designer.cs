@@ -53,6 +53,7 @@
             this.TimeLabel = new System.Windows.Forms.Label();
             this.BubbleSortButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
+            this.QuickSortButton = new System.Windows.Forms.Button();
             this.AddNumbersPanel.SuspendLayout();
             this.FillRandomPanel.SuspendLayout();
             this.ControlsPanel.SuspendLayout();
@@ -150,6 +151,7 @@
             // 
             // ControlsPanel
             // 
+            this.ControlsPanel.Controls.Add(this.QuickSortButton);
             this.ControlsPanel.Controls.Add(this.RadixMSDSortButton);
             this.ControlsPanel.Controls.Add(this.RadixLSDSortButton);
             this.ControlsPanel.Controls.Add(this.MergeSortButton);
@@ -317,6 +319,16 @@
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
+            // QuickSortButton
+            // 
+            this.QuickSortButton.Location = new System.Drawing.Point(408, 87);
+            this.QuickSortButton.Name = "QuickSortButton";
+            this.QuickSortButton.Size = new System.Drawing.Size(85, 23);
+            this.QuickSortButton.TabIndex = 15;
+            this.QuickSortButton.Text = "QuickSort";
+            this.QuickSortButton.UseVisualStyleBackColor = true;
+            this.QuickSortButton.Click += new System.EventHandler(this.QuickSortButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -366,6 +378,7 @@
         private System.Windows.Forms.Button MergeSortButton;
         private System.Windows.Forms.Button RadixMSDSortButton;
         private System.Windows.Forms.Button RadixLSDSortButton;
+        private System.Windows.Forms.Button QuickSortButton;
     }
 }
 
